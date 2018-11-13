@@ -54,6 +54,14 @@
 
 //TEST 2
 
+/**
+ * 
+ * @param {*} first 
+ * @param {*} health 
+ * @param {*} attack 
+ * @param {*} method 
+ */
+
 function Person(first, health, attack, method) {
   this.name = first;
   this.health = health;
@@ -61,8 +69,20 @@ function Person(first, health, attack, method) {
   this.method = method;
 }
 
+
 var king = new Person("Naudje", 100, 20,["sword", "fist"]);
 var queen = new Person("Rosia", 90, 25, ["magic", "bow"]);
+
+//Magician need to be modify on an extend object. 
+
+/**
+ * 
+ * @param {*} first 
+ * @param {*} health 
+ * @param {*} attack 
+ * @param {*} mana 
+ * @param {*} heal 
+ */
 
 function Other(first, health, attack, mana, heal) {
   this.name = first;
@@ -122,8 +142,6 @@ function turn() {
   document.getElementById("king").innerHTML = "king have " + king.health + " hp";
   document.getElementById("mage").innerHTML = "mage have " + mage.health + " hp and " + mage.mana + " mana.";
 
-    // document.getElementById("exo").innerHTML =
-    //   "King is using " + king.method[0] + " and Queen has " + queen.health + ". <br />" + "King is safe because Queen used " + queen.method[1];
     return;
 
   } else if (x > 0.33 && x < 0.66) {
@@ -134,9 +152,6 @@ function turn() {
     document.getElementById("king").innerHTML = "king have " + king.health + " hp";
     document.getElementById("mage").innerHTML = "mage have " + mage.health + " hp and " + mage.mana + " mana.";
 
-
-  // document.getElementById("exo").innerHTML =
-  //   "Queen is using " + queen.method[0] + " and King has " + king.health + ". <br />" + "Queen is safe because King used " + king.method[1];
 return;
 
   }else if(x > 0.66){
@@ -147,7 +162,6 @@ return;
     document.getElementById("king").innerHTML = "king have " + king.health + " hp";
     document.getElementById("mage").innerHTML = "mage = " + mage.health + "hp";
     document.getElementById("magemana").innerHTML = "mage mana = " + mage.mana;
-    // document.getElementById("exo").innerHTML = "Mage is using attacking";
     }
 
   if(queen.health < 0) {
@@ -171,3 +185,6 @@ return;
   }
 
 }
+
+//Next exercise : Modify all condition by extend.methods.
+
